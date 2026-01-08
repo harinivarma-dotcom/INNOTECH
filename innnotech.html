@@ -7,11 +7,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<section class="card">
+    <p id="langText">
+        Select a scheme and apply easily using our platform.
+    </p>
+</section>
 <header>
     <h1>Farmer Financial Awareness Portal</h1>
 </header>
+<section class="card">
+    <h2>Language Selection</h2>
 
+    <select onchange="changeLanguage(this.value)">
+        <option value="en">English</option>
+        <option value="te">తెలుగు</option>
+    </select>
+
+    <p id="langText">
+        Select a scheme and apply easily using our platform.
+    </p>
+</section>
 <section class="card">
     <h2>Government Schemes</h2>
     <p>PM Kisan Yojana, PM Fasal Bima Yojana, Kisan Credit Card</p>
@@ -55,11 +70,6 @@
     <h2>Notifications</h2>
     <button type="button" onclick="showAlert()">Show Alert</button>
 </section>
-
-<footer>
-    <p>Demo project for hackathon | Frontend only</p>
-</footer>
-
 <script src="script.js"></script>
 </body>
 </html>
@@ -87,4 +97,81 @@
     <button onclick="showCropPrice()">Check Price</button>
 
     <p id="priceResult"></p>
+</section>
+<section class="card">
+    <h2>Step-by-Step Application Guide</h2>
+
+    <ol id="steps">
+        <li>Select the government scheme</li>
+        <li>Enter farmer details</li>
+        <li>Check eligibility</li>
+        <li>Submit application</li>
+        <li>Visit nearest bank / CSC with documents</li>
+    </ol>
+
+    <button onclick="nextStep()">Next Step</button>
+    <p id="stepStatus"></p>
+</section>
+<section class="card">
+    <h2>Notifications & Alerts</h2>
+
+    <button onclick="showAlert()">Show Latest Alert</button>
+    <button onclick="showDeadline()">Scheme Deadline</button>
+
+    <p id="notificationText"></p>
+</section>
+<section class="card">
+    <h2>Crop Insurance Guidance (PMFBY)</h2>
+
+    <label>Select Crop</label>
+    <select id="insuranceCrop">
+        <option value="">Select Crop</option>
+        <option value="Rice">Rice</option>
+        <option value="Wheat">Wheat</option>
+        <option value="Cotton">Cotton</option>
+        <option value="Maize">Maize</option>
+    </select>
+
+    <label>Season</label>
+    <select id="season">
+        <option value="">Select Season</option>
+        <option value="Kharif">Kharif</option>
+        <option value="Rabi">Rabi</option>
+    </select>
+
+    <button onclick="showInsuranceGuidance()">Get Guidance</button>
+
+    <p id="insuranceResult"></p>
+</section>
+<section class="card">
+    <h2>Weather Updates</h2>
+
+    <label>Select State</label>
+    <select id="weatherState">
+        <option value="">Select State</option>
+        <option value="Telangana">Telangana</option>
+        <option value="Andhra Pradesh">Andhra Pradesh</option>
+        <option value="Punjab">Punjab</option>
+        <option value="Maharashtra">Maharashtra</option>
+    </select>
+
+    <button onclick="showWeather()">Check Weather</button>
+
+    <p id="weatherResult"></p>
+</section>
+<section class="card">
+    <h2>Crop Disease & Pest Alerts</h2>
+
+    <label>Select Crop</label>
+    <select id="diseaseCrop">
+        <option value="">Select Crop</option>
+        <option value="Rice">Rice</option>
+        <option value="Wheat">Wheat</option>
+        <option value="Cotton">Cotton</option>
+        <option value="Maize">Maize</option>
+    </select>
+
+    <button onclick="showPestAlert()">Check Alerts</button>
+
+    <p id="diseaseResult"></p>
 </section>

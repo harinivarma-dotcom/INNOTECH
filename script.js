@@ -107,3 +107,108 @@ function showCropPrice() {
             "Price data not available for selected crop in this state.";
     }
 }
+let currentStep = 0;
+
+function nextStep() {
+    const steps = document.querySelectorAll("#steps li");
+    if (currentStep < steps.length) {
+        steps[currentStep].style.color = "green";
+        document.getElementById("stepStatus").innerText =
+            "Completed step " + (currentStep + 1);
+        currentStep++;
+    } else {
+        document.getElementById("stepStatus").innerText =
+            "All steps completed!";
+    }
+}
+function changeLanguage(lang) {
+    const text = document.getElementById("langText");
+
+    if (lang === "te") {
+        text.innerText =
+            "పథకాన్ని ఎంచుకొని సులభంగా దరఖాస్తు చేయండి.";
+    } else {
+        text.innerText =
+            "Select a scheme and apply easily using our platform.";
+    }
+}
+function showAlert() {
+    document.getElementById("notificationText").innerText =
+        "New Update: PM Kisan next installment will be released soon.";
+}
+
+function showDeadline() {
+    document.getElementById("notificationText").innerText =
+        "Deadline Alert: PMFBY application closes on 31 January.";
+}
+function showInsuranceGuidance() {
+    let crop = document.getElementById("insuranceCrop").value;
+    let season = document.getElementById("season").value;
+    let result = "";
+
+    if (crop === "" || season === "") {
+        result = "Please select both crop and season.";
+    } else {
+        result =
+            "Under PM Fasal Bima Yojana, " +
+            crop +
+            " crop in " +
+            season +
+            " season is insured against natural calamities, pests, and crop loss. " +
+            "Farmers need Aadhaar, land records, and bank details to apply.";
+    }
+
+    document.getElementById("insuranceResult").innerText = result;
+}
+function showWeather() {
+    let state = document.getElementById("weatherState").value;
+    let weather = "";
+
+    if (state === "") {
+        weather = "Please select a state.";
+    }
+    else if (state === "Telangana") {
+        weather = "Weather: Sunny. Temperature around 32°C. Suitable for harvesting.";
+    }
+    else if (state === "Andhra Pradesh") {
+        weather = "Weather: Partly cloudy. Chance of light rain.";
+    }
+    else if (state === "Punjab") {
+        weather = "Weather: Cold conditions. Temperature around 18°C.";
+    }
+    else if (state === "Maharashtra") {
+        weather = "Weather: Moderate climate. Suitable for crop growth.";
+    }
+
+    document.getElementById("weatherResult").innerText = weather;
+}
+function showPestAlert() {
+    let crop = document.getElementById("diseaseCrop").value;
+    let result = "";
+
+    if (crop === "") {
+        result = "Please select a crop.";
+    }
+    else if (crop === "Rice") {
+        result = "Rice Pest Alert: Stem borer and leaf blight common.\n" +
+                 "Prevention: Use resistant varieties, proper spacing.\n" +
+                 "Treatment: Apply approved pesticides as per guidelines.";
+    }
+    else if (crop === "Wheat") {
+        result = "Wheat Pest Alert: Rust disease and aphids common.\n" +
+                 "Prevention: Crop rotation, use certified seeds.\n" +
+                 "Treatment: Fungicides and insecticides recommended.";
+    }
+    else if (crop === "Cotton") {
+        result = "Cotton Pest Alert: Bollworm and whitefly common.\n" +
+                 "Prevention: Intercropping, pheromone traps.\n" +
+                 "Treatment: Use biological control or approved chemicals.";
+    }
+    else if (crop === "Maize") {
+        result = "Maize Pest Alert: Stem borer and armyworm common.\n" +
+                 "Prevention: Proper irrigation and crop hygiene.\n" +
+                 "Treatment: Apply recommended insecticides carefully.";
+    }
+
+    document.getElementById("diseaseResult").innerText = result;
+}
