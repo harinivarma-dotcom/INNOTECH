@@ -212,3 +212,36 @@ function showPestAlert() {
 
     document.getElementById("diseaseResult").innerText = result;
 }
+function showSuppliers() {
+    let state = document.getElementById("storeState").value;
+    let input = document.getElementById("inputType").value;
+    let result = "";
+
+    if (state === "" || input === "") {
+        result = "Please select both state and input type.";
+    } 
+    else {
+        if (state === "Telangana") {
+            if (input === "Seeds") result = "Telangana Seeds Supplier: GreenGrow Agro, Hyderabad";
+            else if (input === "Fertilizers") result = "Telangana Fertilizer Supplier: AgroChem Pvt Ltd, Warangal";
+            else if (input === "Equipment") result = "Telangana Equipment Supplier: FarmTech Machines, Karimnagar";
+        } 
+        else if (state === "Andhra Pradesh") {
+            if (input === "Seeds") result = "Andhra Seeds Supplier: AP Agro Seeds, Vijayawada";
+            else if (input === "Fertilizers") result = "Andhra Fertilizer Supplier: Fertico Pvt Ltd, Guntur";
+            else if (input === "Equipment") result = "Andhra Equipment Supplier: AgroMachinery, Nellore";
+        } 
+        else if (state === "Punjab") {
+            if (input === "Seeds") result = "Punjab Seeds Supplier: Green Fields, Ludhiana";
+            else if (input === "Fertilizers") result = "Punjab Fertilizer Supplier: AgroGrow Ltd, Amritsar";
+            else if (input === "Equipment") result = "Punjab Equipment Supplier: FarmEquip, Patiala";
+        } 
+        else if (state === "Maharashtra") {
+            if (input === "Seeds") result = "Maharashtra Seeds Supplier: Agro Seeds Co, Pune";
+            else if (input === "Fertilizers") result = "Maharashtra Fertilizer Supplier: FertilPro, Nagpur";
+            else if (input === "Equipment") result = "Maharashtra Equipment Supplier: FarmMachines, Nashik";
+        }
+    }
+
+    document.getElementById("storeResult").innerText = result;
+}
