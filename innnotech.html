@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Farmer Government Scheme Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Farmer Financial Awareness Portal</h1>
+</header>
+
+<section class="card">
+    <h2>Government Schemes</h2>
+    <p>PM Kisan Yojana, PM Fasal Bima Yojana, Kisan Credit Card</p>
+</section>
+
+<section class="card">
+    <h2>Apply for Government Scheme</h2>
+
+    <label>Select Scheme</label>
+    <select id="scheme">
+        <option value="">Select Scheme</option>
+        <option value="PM Kisan">PM Kisan Yojana</option>
+        <option value="PMFBY">PM Fasal Bima Yojana</option>
+        <option value="KCC">Kisan Credit Card</option>
+    </select>
+
+    <label>Farmer Name</label>
+    <input type="text" id="name" placeholder="Enter name">
+
+    <label>Land in Acres</label>
+    <input type="number" id="land" placeholder="Enter land size">
+
+    <label>State</label>
+    <input type="text" id="state" placeholder="Enter state">
+
+    <button type="button" onclick="checkEligibility()">Check Eligibility</button>
+    <p id="eligibilityResult"></p>
+
+    <button type="button" onclick="submitApplication()">Apply Now</button>
+    <p id="applicationResult"></p>
+</section>
+
+<section class="card">
+    <h2>Helpline / Chatbot</h2>
+    <input type="text" id="chatInput" placeholder="Ask your question">
+    <button type="button" onclick="chatbot()">Ask</button>
+    <p id="chatOutput"></p>
+</section>
+
+<section class="card">
+    <h2>Notifications</h2>
+    <button type="button" onclick="showAlert()">Show Alert</button>
+</section>
+
+<footer>
+    <p>Demo project for hackathon | Frontend only</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+<section class="card">
+    <h2>Crop Prices by State</h2>
+
+    <label>Select State</label>
+    <select id="priceState">
+        <option value="">Select State</option>
+        <option value="Telangana">Telangana</option>
+        <option value="Andhra Pradesh">Andhra Pradesh</option>
+        <option value="Punjab">Punjab</option>
+        <option value="Maharashtra">Maharashtra</option>
+    </select>
+
+    <label>Select Crop</label>
+    <select id="crop">
+        <option value="">Select Crop</option>
+        <option value="Rice">Rice</option>
+        <option value="Wheat">Wheat</option>
+        <option value="Cotton">Cotton</option>
+        <option value="Maize">Maize</option>
+    </select>
+
+    <button onclick="showCropPrice()">Check Price</button>
+
+    <p id="priceResult"></p>
+</section>
